@@ -34,6 +34,7 @@ a:hover {
 }
 
 /* 🔥 Fullscreen Loader */
+/* Fullscreen loader background */
 #loader {
   position: fixed;
   top: 0;
@@ -49,36 +50,63 @@ a:hover {
   transition: opacity 0.8s ease, visibility 0.8s ease;
 }
 
-/* Loading Spinner */
-.loading-spinner {
-  width: 70px;
-  height: 70px;
-  border: 4px solid #00ffff;
-  border-top: 4px solid transparent;
-  border-radius: 50%;
-  animation: spin 1.2s linear infinite;
-  margin-bottom: 20px;
-  box-shadow: 0 0 20px #00ffff;
+/* The 3D cube container */
+.cube {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  transform-style: preserve-3d;
+  animation: rotateCube 3s infinite linear;
 }
 
-/* Text under spinner */
+/* Cube faces */
+.face {
+  position: absolute;
+  width: 100px;
+  height: 100px;
+  border: 2px solid #00ff88;
+  box-shadow: 0 0 20px #00ff88, inset 0 0 20px #00ff88;
+  background: rgba(0, 255, 136, 0.05);
+}
+
+/* Position each cube face */
+.front  { transform: translateZ(50px); }
+.back   { transform: rotateY(180deg) translateZ(50px); }
+.right  { transform: rotateY(90deg) translateZ(50px); }
+.left   { transform: rotateY(-90deg) translateZ(50px); }
+.top    { transform: rotateX(90deg) translateZ(50px); }
+.bottom { transform: rotateX(-90deg) translateZ(50px); }
+
+@keyframes rotateCube {
+  from { transform: rotateX(0deg) rotateY(0deg); }
+  to { transform: rotateX(360deg) rotateY(360deg); }
+}
+
+/* Text under cube */
 .loading-text {
-  color: #00ffff;
+  color: #00ff88;
   font-size: 1.2rem;
   font-family: 'Orbitron', sans-serif;
-  text-shadow: 0 0 10px #00ffff;
+  text-shadow: 0 0 15px #00ff88;
   letter-spacing: 1px;
+  margin-top: 20px;
 }
 
-@keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
-
-/* Fade-out animation for loader */
+/* Fade out when loaded */
 #loader.fade-out {
   opacity: 0;
   visibility: hidden;
 }
+
+/* Background for site */
+body {
+  background-color: #0a0a0f;
+  color: #e0ffe0;
+  font-family: 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
 
 

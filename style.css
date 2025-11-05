@@ -12,7 +12,7 @@ canvas#stars {
 
 /* Glowing Name */
 .Name_Main {
-  font-size: 180px;
+  font-size: 80px;
   color: #fff;
   text-align: center;
   animation: glow 1s ease-in-out infinite alternate;
@@ -39,5 +39,6 @@ canvas#stars {
                  0 0 80px #ff4da6;
   }
 }
+
 
 

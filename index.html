@@ -1,56 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Your Name | Unity Developer</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Name | Unity Developer</title>
 
-<body>
-  <!-- Loading Screen -->
-  <div id="loader">
-    <div class="cube">
-      <div class="face front"></div>
-      <div class="face back"></div>
-      <div class="face left"></div>
-      <div class="face right"></div>
-      <div class="face top"></div>
-      <div class="face bottom"></div>
-    </div>
-    <p class="loading-text">Booting Unity Systems...</p>
-  </div>
+    <!-- Tailwind CDN (no install needed) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              dark: '#0a0118',
+              accent: '#a855f7',
+            },
+            fontFamily: {
+              mono: ['"JetBrains Mono"', 'monospace'],
+            },
+          },
+        },
+      };
+    </script>
 
-  <!-- Main Website Content -->
-  <div id="content" style="display:none;">
-    <header>
-      <h1>Hey, I'm [Your Name]</h1>
-      <p>Unity Developer | Game Designer | C# Enthusiast</p>
-    </header>
+    <!-- Your custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-    <section id="about">
-      <h2>About Me</h2>
-      <p>I’m a passionate Unity Developer with 2 years of experience in creating games, tools, and interactive experiences.</p>
+  <body class="font-mono bg-dark text-white overflow-x-hidden">
+    <canvas id="stars"></canvas>
+
+    <!-- Navbar -->
+    <nav class="max-w-6xl mx-auto flex justify-between items-center py-6 px-6 text-sm">
+      <div class="text-accent font-bold text-lg">YourName<span class="text-white">.</span></div>
+      <div class="flex space-x-6 text-gray-300">
+        <a href="#home" class="hover:text-accent">Home</a>
+        <a href="#about" class="hover:text-accent">About</a>
+        <a href="#projects" class="hover:text-accent">Projects</a>
+        <a href="#resume" class="hover:text-accent">Resume</a>
+        <a href="#blogs" class="hover:text-accent">Blogs</a>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section id="home" class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center px-6 mt-10">
+      <div>
+        <p class="text-lg text-gray-300 mb-2">Hi There! 👋</p>
+        <h1 class="text-3xl md:text-5xl font-bold mb-2">
+          I'M <span class="text-accent">YOUR NAME</span>
+        </h1>
+        <p class="text-xl text-gray-400 mb-6">Unity / Game Developer</p>
+
+        <a
+          href="#projects"
+          class="bg-accent text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 transition-transform"
+          >View Projects</a
+        >
+      </div>
+
+      <div class="flex justify-center">
+        <!-- You can replace this link with your own SVG or PNG -->
+        <img src="https://undraw.co/api/illustrations/coding" alt="developer" class="w-80 md:w-96" />
+      </div>
     </section>
 
-    <section id="projects">
-      <h2>My Projects 🎮</h2>
-      <ul>
-        <li><b>Space Shooter:</b> A 2D arcade shooter with powerups and bosses.</li>
-        <li><b>Physics Sandbox:</b> A Unity experiment with ragdoll physics.</li>
-      </ul>
-    </section>
-
-    <section id="contact">
-      <h2>Contact Me</h2>
-      <p>Email: <a href="mailto:yourmail@gmail.com">yourmail@gmail.com</a></p>
-    </section>
-
-    <footer>
-      <p>© 2025 Your Name. Made with ❤️ & Unity vibes.</p>
+    <footer class="text-center text-gray-500 text-xs mt-20 mb-6">
+      © 2025 Your Name | Made with ❤️ using TailwindCSS
     </footer>
-  </div>
 
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
